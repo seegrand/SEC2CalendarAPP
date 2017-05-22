@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upcoming events</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% if (events) { %>
+      <% if (events.length > 0) { %>
+        <h1>Upcoming <%= events.length %> events for SOPRJ12h</h1>
+        <ul>
+          <% for (var i = 0; i < events.length; i++) {%>
+            <li><%= events[i].summary %> (<%= events[i].start.dateTime || events[i].start.date %>)</li>
+          <% } %>
+        </ul>
+
+      <% } else { %>
+          <h1>No upcoming events for SOPRJ12h</h1>
+      <% } %>
+    <% } %>
+  </body>
+</html>
